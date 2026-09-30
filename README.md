@@ -39,19 +39,6 @@ cd eduGenie
 
 - Replace `'YOUR_API_KEY'` in the code with your **Google Gemini API** key to enable response generation.
 
-## Project Components
-
-- **app.py**: Main Flask application for chatbot interactions and video file serving.
-- **video_generate()**: Generates avatar video synchronized with the chatbot’s audio output using DreamTalk.
-- **text_to_speech()**: Converts chatbot responses to audio using SpeechT5.
-- **detect_emotion()**: Identifies emotions from user inputs, shaping responses accordingly.
-- **generate_response()**: Uses Google Gemini API to create contextually relevant responses, incorporating emotional insights from `detect_emotion()`.
-- **index()**: Renders the main page of the web application.
-- **ask()**: Processes user input, detects emotion, generates a response, creates audio and video, and returns the results in JSON format.
-- **feedback()**: Logs feedback received from users about their interaction with the chatbot.
-- **serve_video(filename)**: Serves the generated video files for download or playback through the web interface.
-- Logging Setup: Configures logging to track chatbot interactions, errors, and performance metrics. Log files are saved in the logs directory with timestamps for easy reference.
-
 ## Usage
 
 1. **Run the Application**:
