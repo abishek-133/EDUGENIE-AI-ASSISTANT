@@ -14,12 +14,12 @@ Here’s how you can set up EduGenie Chatbot on your local machine:
 import os
 import glob
 
-# 1. Clear previous clone and get the latest code from your repo
+## 1. Clear previous clone and get the latest code from your repo
 %cd /content
 !rm -rf EDUGENIE-AI-ASSISTANT
 !git clone https://github.com/abishek-133/EDUGENIE-AI-ASSISTANT.git
 
-# 2. Automatically enter the folder where app.py is located
+## 2. Automatically enter the folder where app.py is located
 app_files = glob.glob("/content/EDUGENIE-AI-ASSISTANT/**/app.py", recursive=True)
 if not app_files:
     raise FileNotFoundError("app.py could not be found!")
@@ -28,11 +28,11 @@ run_dir = os.path.dirname(app_files[0])
 %cd {run_dir}
 print(f"Running from: {run_dir}")
 
-# 3. Install dependencies
+## 3. Install dependencies
 !pip install --upgrade google-genai flask flask-cors --quiet
 !npm install -g localtunnel --silent > /dev/null 2>&1
 
-# 4. Display Localtunnel IP & Launch Server
+## 4. Display Localtunnel IP & Launch Server
 print("\n" + "=" * 60)
 print("YOUR LOCALTUNNEL PASSWORD (IP ADDRESS):")
 !curl -s ipv4.icanhazip.com
@@ -44,11 +44,11 @@ print("Click the URL below and submit the IP address above:\n")
 
 ---------------------------------------------------------------
 ## Steps to open and test:
-step 1:Look at the output of the cell and copy the IP address (e.g., 34.120.x.x).
+##step 1:Look at the output of the cell and copy the IP address (e.g., 34.120.x.x).
 
 ## Click the [https://...loca.lt](https://...loca.lt) link.
 
-step 2:Paste the IP into the Endpoint IP field and click Submit.
+##step 2:Paste the IP into the Endpoint IP field and click Submit.
 ---------------------------------------------------------------
 ## Dependencies
 
