@@ -10,48 +10,46 @@ eduGenie combines state-of-the-art language and speech models with real-time ani
 
 Here’s how you can set up EduGenie Chatbot on your local machine:
 
-### Step 1: Clone the Repository
+## run this code on google colab 
+import os
+import glob
 
-```bash
-git clone https://github.com/abishek-133/EDUGENIE-AI-ASSISTANT.git
-cd eduGenie
-```
+# 1. Clear previous clone and get the latest code from your repo
+%cd /content
+!rm -rf EDUGENIE-AI-ASSISTANT
+!git clone https://github.com/abishek-133/EDUGENIE-AI-ASSISTANT.git
 
-### Step 2: Install Dependencies
+# 2. Automatically enter the folder where app.py is located
+app_files = glob.glob("/content/EDUGENIE-AI-ASSISTANT/**/app.py", recursive=True)
+if not app_files:
+    raise FileNotFoundError("app.py could not be found!")
 
-- Set up a virtual environment and install required packages:
-  ```bash
-  python3 -m venv env
-  source env/bin/activate
-  pip install -r requirements.txt
-  ```
+run_dir = os.path.dirname(app_files[0])
+%cd {run_dir}
+print(f"Running from: {run_dir}")
 
-- Install the Desktop development with C++ module and install the CMake software build automation program. (Don't forget to set the environmental variables path for CCmake)  
-  
+# 3. Install dependencies
+!pip install --upgrade google-genai flask flask-cors --quiet
+!npm install -g localtunnel --silent > /dev/null 2>&1
 
-### Step 3: Configure the Models
+# 4. Display Localtunnel IP & Launch Server
+print("\n" + "=" * 60)
+print("YOUR LOCALTUNNEL PASSWORD (IP ADDRESS):")
+!curl -s ipv4.icanhazip.com
+print("=" * 60)
+print("Click the URL below and submit the IP address above:\n")
 
-- Download models for emotion detection, text-to-speech, and vocoder:
-  - Emotion Detection: `t5-base-finetuned-emotion`
-  - TTS: `speecht5_tts` and `speecht5_hifigan`
+!npx localtunnel --port 5000 & python app.py
 
-### Step 4: Set Up API Key
 
-- Replace `'YOUR_API_KEY'` in the code with your **Google Gemini API** key to enable response generation.
+---------------------------------------------------------------
+## Steps to open and test:
+step 1:Look at the output of the cell and copy the IP address (e.g., 34.120.x.x).
 
-## Usage
+## Click the [https://...loca.lt](https://...loca.lt) link.
 
-1. **Run the Application**:
-   ```bash
-   python app.py
-   ```
-
-2. **Access the Chat Interface**:
-   - Open your browser and navigate to `http://localhost:5000`.
-
-3. **Start Chatting with EduGenie**:
-   - Enter questions or statements in the chat box, and EduGenie will respond with text and an animated video!
-
+step 2:Paste the IP into the Endpoint IP field and click Submit.
+---------------------------------------------------------------
 ## Dependencies
 
 eduGenie Chatbot relies on several key libraries and models:
@@ -59,10 +57,5 @@ eduGenie Chatbot relies on several key libraries and models:
 - **MoviePy** for video processing
 - **Flask** for creating a local web server
 - **Google Gemini API** for text generation and response adaptation
-
----
-
-## Warning
-- You need to install Python version 3.9.13 for the project. Using the wrong version may cause incompatibility problems between the libraries used!
 
 eduGenie Chatbot is more than just a language learning tool; it's a responsive, engaging, and empathetic virtual assistant designed to make learning English interactive and enjoyable!
