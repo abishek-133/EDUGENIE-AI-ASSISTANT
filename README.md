@@ -1,12 +1,12 @@
 # EDUGENIE - GOOGLE GEMINI POWERED LEARNING ASSISTANT
 
-# 🎓 EduGenie AI Assistant
+#  EduGenie AI Assistant
 
 EduGenie is a lightweight, responsive, and modern AI-powered learning assistant designed to help students master complex concepts across computer science, mathematics, and engineering. Built on a clean Flask backend and powered by the Google Gemini API, EduGenie delivers structured, step-by-step explanations, analogies, and practice problems in real time.
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Gemini-Powered Intelligence:** Powered by high-efficiency models (`gemini-3.8-flash` / `gemini-3.5-flash`) for low-latency tutoring.
 - **Auto-Failover & Retry:** Automatic fallback to backup models if a server experiences temporary demand spikes (503 handling).
@@ -15,6 +15,32 @@ EduGenie is a lightweight, responsive, and modern AI-powered learning assistant 
 - **Zero Heavy Bloat:** Clean architecture without bulky PyTorch weights or outdated avatar dependencies—runs instantly on modern Python environments (including Python 3.11+).
 
 ---
+## Running on Google Colab
+Open a new or existing notebook in Google Colab.
+
+Clone the repository and navigate into the project directory:
+
+Python
+!git clone https://github.com/abishek-133/EDUGENIE-AI-ASSISTANT.git
+%cd EDUGENIE-AI-ASSISTANT
+Install the required lightweight dependencies:
+
+Python
+!pip install -r requirements.txt --quiet
+!npm install -g localtunnel --silent > /dev/null 2>&1
+Set your Google Gemini API key as an environment variable:
+
+Python
+import os
+os.environ["GEMINI_API_KEY"] = "YOUR_GEMINI_API_KEY"
+Launch the Flask server and start localtunnel:
+
+Python
+print("Your tunnel password (IP):")
+!curl -s ipv4.icanhazip.com
+print("\nClick the loca.lt link below and enter the IP address above:\n")
+!npx localtunnel --port 5000 & python app.py
+Click the generated .loca.lt link, enter your public IP address into the endpoint verification page, and begin using EduGenie.
 
 ## 📁 Project Structure
 
