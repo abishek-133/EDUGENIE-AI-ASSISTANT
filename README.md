@@ -42,7 +42,7 @@ print("\nClick the loca.lt link below and enter the IP address above:\n")
 !npx localtunnel --port 5000 & python app.py
 Click the generated .loca.lt link, enter your public IP address into the endpoint verification page, and begin using EduGenie.
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 EDUGENIE-AI-ASSISTANT/
@@ -51,5 +51,10 @@ EDUGENIE-AI-ASSISTANT/
 ├── templates/
 │   └── index.html      # Modern chat interface
 └── README.md           # Project documentation
+```
+---
 
 eduGenie Chatbot is more than just a language learning tool; it's a responsive, engaging, and empathetic virtual assistant designed to make learning English interactive and enjoyable!
+
+## License
+This project is open-source and available under the MIT License.
