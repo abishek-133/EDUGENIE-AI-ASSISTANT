@@ -25,8 +25,7 @@ cd eduGenie
   source env/bin/activate
   pip install -r requirements.txt
   ```
-- Drag the 'checkpoints' folder you downloaded from this link https://drive.google.com/file/d/1BFg7pFMS5DNsNDtHWe2eLINpxJbAua59/view?usp=sharing directly to the dreamtalk folder.
- 
+
 - Install the Desktop development with C++ module and install the CMake software build automation program. (Don't forget to set the environmental variables path for CCmake)  
   
 
